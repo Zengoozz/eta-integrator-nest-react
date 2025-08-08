@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
-import { CoreController } from './core.controller';
 import { CoreSettingStepController } from './controllers/core.setting-step.controller';
+import { ResponseProcessorService } from './services/response-processor.service';
+import { RequestFactoryService } from './services/request-factory.service';
 
 @Module({
-  controllers: [CoreController, CoreSettingStepController],
+  controllers: [CoreSettingStepController],
+  providers: [RequestFactoryService, ResponseProcessorService],
 })
 export class CoreModule {}
